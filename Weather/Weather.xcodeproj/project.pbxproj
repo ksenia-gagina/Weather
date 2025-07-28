@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		53356B132E0B234100E6B8B0 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		534038972E368D2F00EC83D6 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		53356B252E0B234300E6B8B0 /* Exceptions for "Weather" folder in "Weather" target */ = {
+		534038A92E368D3100EC83D6 /* Exceptions for "Weather" folder in "Weather" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 53356B122E0B234100E6B8B0 /* Weather */;
+			target = 534038962E368D2F00EC83D6 /* Weather */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		53356B152E0B234100E6B8B0 /* Weather */ = {
+		534038992E368D2F00EC83D6 /* Weather */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				53356B252E0B234300E6B8B0 /* Exceptions for "Weather" folder in "Weather" target */,
+				534038A92E368D3100EC83D6 /* Exceptions for "Weather" folder in "Weather" target */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		53356B102E0B234100E6B8B0 /* Frameworks */ = {
+		534038942E368D2F00EC83D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53356B0A2E0B234100E6B8B0 = {
+		5340388E2E368D2F00EC83D6 = {
 			isa = PBXGroup;
 			children = (
-				53356B152E0B234100E6B8B0 /* Weather */,
-				53356B142E0B234100E6B8B0 /* Products */,
+				534038992E368D2F00EC83D6 /* Weather */,
+				534038982E368D2F00EC83D6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		53356B142E0B234100E6B8B0 /* Products */ = {
+		534038982E368D2F00EC83D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53356B132E0B234100E6B8B0 /* Weather.app */,
+				534038972E368D2F00EC83D6 /* Weather.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,65 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53356B122E0B234100E6B8B0 /* Weather */ = {
+		534038962E368D2F00EC83D6 /* Weather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53356B262E0B234300E6B8B0 /* Build configuration list for PBXNativeTarget "Weather" */;
+			buildConfigurationList = 534038AA2E368D3100EC83D6 /* Build configuration list for PBXNativeTarget "Weather" */;
 			buildPhases = (
-				53356B0F2E0B234100E6B8B0 /* Sources */,
-				53356B102E0B234100E6B8B0 /* Frameworks */,
-				53356B112E0B234100E6B8B0 /* Resources */,
+				534038932E368D2F00EC83D6 /* Sources */,
+				534038942E368D2F00EC83D6 /* Frameworks */,
+				534038952E368D2F00EC83D6 /* Resources */,
+				534038CD2E379D1D00EC83D6 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				53356B152E0B234100E6B8B0 /* Weather */,
+				534038992E368D2F00EC83D6 /* Weather */,
 			);
 			name = Weather;
 			packageProductDependencies = (
 			);
 			productName = Weather;
-			productReference = 53356B132E0B234100E6B8B0 /* Weather.app */;
+			productReference = 534038972E368D2F00EC83D6 /* Weather.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		53356B0B2E0B234100E6B8B0 /* Project object */ = {
+		5340388F2E368D2F00EC83D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					53356B122E0B234100E6B8B0 = {
+					534038962E368D2F00EC83D6 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 53356B0E2E0B234100E6B8B0 /* Build configuration list for PBXProject "Weather" */;
+			buildConfigurationList = 534038922E368D2F00EC83D6 /* Build configuration list for PBXProject "Weather" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 53356B0A2E0B234100E6B8B0;
+			mainGroup = 5340388E2E368D2F00EC83D6;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 53356B142E0B234100E6B8B0 /* Products */;
+			productRefGroup = 534038982E368D2F00EC83D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53356B122E0B234100E6B8B0 /* Weather */,
+				534038962E368D2F00EC83D6 /* Weather */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		53356B112E0B234100E6B8B0 /* Resources */ = {
+		534038952E368D2F00EC83D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,8 +128,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		534038CD2E379D1D00EC83D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		53356B0F2E0B234100E6B8B0 /* Sources */ = {
+		534038932E368D2F00EC83D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +159,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		53356B272E0B234300E6B8B0 /* Debug */ = {
+		534038AB2E368D3100EC83D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -149,7 +170,6 @@
 				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -165,7 +185,7 @@
 			};
 			name = Debug;
 		};
-		53356B282E0B234300E6B8B0 /* Release */ = {
+		534038AC2E368D3100EC83D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -176,7 +196,6 @@
 				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -192,7 +211,7 @@
 			};
 			name = Release;
 		};
-		53356B292E0B234300E6B8B0 /* Debug */ = {
+		534038AD2E368D3100EC83D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +248,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -255,7 +274,7 @@
 			};
 			name = Debug;
 		};
-		53356B2A2E0B234300E6B8B0 /* Release */ = {
+		534038AE2E368D3100EC83D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,7 +311,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -314,25 +333,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53356B0E2E0B234100E6B8B0 /* Build configuration list for PBXProject "Weather" */ = {
+		534038922E368D2F00EC83D6 /* Build configuration list for PBXProject "Weather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53356B292E0B234300E6B8B0 /* Debug */,
-				53356B2A2E0B234300E6B8B0 /* Release */,
+				534038AD2E368D3100EC83D6 /* Debug */,
+				534038AE2E368D3100EC83D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53356B262E0B234300E6B8B0 /* Build configuration list for PBXNativeTarget "Weather" */ = {
+		534038AA2E368D3100EC83D6 /* Build configuration list for PBXNativeTarget "Weather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53356B272E0B234300E6B8B0 /* Debug */,
-				53356B282E0B234300E6B8B0 /* Release */,
+				534038AB2E368D3100EC83D6 /* Debug */,
+				534038AC2E368D3100EC83D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 53356B0B2E0B234100E6B8B0 /* Project object */;
+	rootObject = 5340388F2E368D2F00EC83D6 /* Project object */;
 }

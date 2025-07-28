@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Weather
 //
-//  Created by Ксения Гагина on 24.06.2025.
+//  Created by Ксения Гагина on 27.07.2025.
 //
 
 import UIKit
