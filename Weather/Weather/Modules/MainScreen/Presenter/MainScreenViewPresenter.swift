@@ -12,11 +12,13 @@ protocol MainScreenViewPresenterOutput: AnyObject {}
 
 final class MainScreenViewPresenter: UIViewController {
 
-  weak var output:MainScreenViewPresenterOutput?
+  weak var output: MainScreenViewPresenterOutput?
   let moduleView: UIView & MainScreenViewInput
   let factory: MainScreenViewFactoryInput
   let interactor: MainScreenViewInteractorInput
-  
+
+  // MARK: - Init
+
   init(
     moduleView: UIView & MainScreenViewInput,
     factory: MainScreenViewFactoryInput,
@@ -27,36 +29,32 @@ final class MainScreenViewPresenter: UIViewController {
     self.interactor = interactor
     super.init(nibName: nil, bundle: nil)
   }
-  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    view = moduleView
   }
 }
 
 // MARK: - MainScreenViewPresenterInput
 
 extension MainScreenViewPresenter: MainScreenViewPresenterInput {
-  
 }
 
 // MARK: - MainScreenViewFactoryOutput
 
 extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
-  
 }
 
 // MARK: - MainScreenViewInteractorOutput
 
 extension MainScreenViewPresenter: MainScreenViewInteractorOutput {
-  
 }
 
 // MARK: - MainScreenViewOutput
 
 extension MainScreenViewPresenter: MainScreenViewOutput {
-  
 }

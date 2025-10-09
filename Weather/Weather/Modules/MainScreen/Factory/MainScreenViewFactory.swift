@@ -12,8 +12,6 @@ protocol MainScreenViewFactoryOutput: AnyObject {}
 
 final class MainScreenViewFactory {
   weak var output: MainScreenViewFactoryOutput?
-  
 }
 extension MainScreenViewFactory: MainScreenViewFactoryInput {
-  
 }

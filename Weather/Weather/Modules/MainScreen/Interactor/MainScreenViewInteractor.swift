@@ -11,10 +11,8 @@ protocol MainScreenViewInteractorInput {}
 protocol MainScreenViewInteractorOutput: AnyObject {}
 
 final class MainScreenViewInteractor {
-  weak var output:MainScreenViewInteractorOutput?
-  
+  weak var output: MainScreenViewInteractorOutput?
 }
 
 extension MainScreenViewInteractor: MainScreenViewInteractorInput {
-  
 }
