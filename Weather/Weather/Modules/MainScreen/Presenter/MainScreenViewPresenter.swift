@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol MainScreenViewPresenterInput {}
 protocol MainScreenViewPresenterOutput: AnyObject {}
@@ -36,6 +37,10 @@ final class MainScreenViewPresenter: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view = moduleView
+    
+    interactor.getUserLocation()
+    
+    
   }
 }
 
@@ -52,6 +57,14 @@ extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
 // MARK: - MainScreenViewInteractorOutput
 
 extension MainScreenViewPresenter: MainScreenViewInteractorOutput {
+  func didUpdateUserLocation(_ location: CLLocation) {
+    //TODO: -
+  }
+  
+  func didFailWithError(with error: any Error) {
+    //TODO: -
+  }
+  
 }
 
 // MARK: - MainScreenViewOutput
