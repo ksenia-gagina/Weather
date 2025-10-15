@@ -37,10 +37,7 @@ final class MainScreenViewPresenter: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view = moduleView
-    
     interactor.getUserLocation()
-    
-    
   }
 }
 
@@ -58,13 +55,14 @@ extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
 
 extension MainScreenViewPresenter: MainScreenViewInteractorOutput {
   func didUpdateUserLocation(_ location: CLLocation) {
-    //TODO: -
+    moduleView.didUpdateUserLocation(
+      latitude: location.coordinate.latitude,
+      longitude: location.coordinate.longitude
+    )
   }
-  
-  func didFailWithError(with error: any Error) {
-    //TODO: -
+  func didFailWithError(with error: Error) {
+    moduleView.showError(error.localizedDescription)
   }
-  
 }
 
 // MARK: - MainScreenViewOutput
