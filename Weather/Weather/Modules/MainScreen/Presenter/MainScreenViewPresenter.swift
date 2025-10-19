@@ -38,6 +38,7 @@ final class MainScreenViewPresenter: UIViewController {
     super.viewDidLoad()
     view = moduleView
     interactor.getUserLocation()
+    interactor.getInfoWeather()
   }
 }
 
@@ -53,7 +54,12 @@ extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
 
 // MARK: - MainScreenViewInteractorOutput
 
+/// Получает данные о местоположении от Interactor и передает их во View для отображения пользователю или выводит сообщение об ошибке.
 extension MainScreenViewPresenter: MainScreenViewInteractorOutput {
+  func didUpdateWeather(_ weatherData: WeatherDataModels) {
+    moduleView.updateWeather(with: weatherData)
+  }
+
   func didUpdateUserLocation(_ location: CLLocation) {
     moduleView.didUpdateUserLocation(
       latitude: location.coordinate.latitude,

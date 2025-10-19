@@ -12,6 +12,7 @@ protocol MainScreenViewInput {
   func didUpdateUserLocation(latitude: Double, longitude: Double)
   /// Показать ошибку
   func showError(_ message: String)
+  func updateWeather(with weatherData: WeatherDataModels)
 }
 protocol MainScreenViewOutput: AnyObject {}
 
@@ -29,6 +30,16 @@ final class MainScreenView: UIView {
 }
 
 extension MainScreenView: MainScreenViewInput {
+  func updateWeather(with weatherData: WeatherDataModels) {
+    print("Город: \(weatherData.city.name)")
+      // Проходим по часам прогноза и выводим температуру и описание
+      for hour in weatherData.list {
+        print(
+          "\(hour.dtTxt): Температура: \(hour.main.temp)°C, Описание: \(hour.weather.first?.description ?? "нет данных")"
+        )
+      }
+  }
+  
   func didUpdateUserLocation(latitude: Double, longitude: Double) {
     print("Местоположение пользователя: \(latitude), \(longitude)")
   }

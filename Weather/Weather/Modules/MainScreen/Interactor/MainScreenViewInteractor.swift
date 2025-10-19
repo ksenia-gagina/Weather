@@ -11,29 +11,53 @@ import CoreLocation
 protocol MainScreenViewInteractorInput {
   /// Получить разрешение на отслеживание местонахождения пользователя
   func getUserLocation()
+  /// Получить информацию о погоде
+  func getInfoWeather()
 }
 
 protocol MainScreenViewInteractorOutput: AnyObject {
   /// Вернули местоположение пользователя
   func didUpdateUserLocation(_ location: CLLocation)
-  /// вернули ошибку
+  /// Вернули ошибку
   func didFailWithError(with error: Error)
+  /// Вернули обновленную информацию о погоде
+  func didUpdateWeather(_ weatherData: WeatherDataModels)
 }
 
 final class MainScreenViewInteractor: NSObject {
   weak var output: MainScreenViewInteractorOutput?
   private let locationManager = CLLocationManager()
-  override init() {
-     super.init()
-     locationManager.delegate = self
-     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-     locationManager.pausesLocationUpdatesAutomatically = true
-   }
+  private let newService: WeatherDataServiceProtocol
+  init(newService: WeatherDataServiceProtocol) {
+    self.newService = newService
+    super.init()
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    locationManager.pausesLocationUpdatesAutomatically = true
+  }
 }
 
 // MARK: - MainScreenViewInteractorInput
 
 extension MainScreenViewInteractor: MainScreenViewInteractorInput {
+  func getInfoWeather() {
+    DispatchQueue.global().async {
+      self.newService.getListWeatherData { weatherInfo in
+        DispatchQueue.main.async { [weak self] in
+          if !weatherInfo.isEmpty {
+            self?.output?.didUpdateWeather(weatherInfo.first!)
+          } else {
+            let error = NSError(
+              domain: "Weather",
+              code: 0,
+              userInfo: [NSLocalizedDescriptionKey: "Ошибка загрузки данных о погоде"]
+            )
+            self?.output?.didFailWithError(with: error)
+          }
+        }
+      }
+    }
+  }
   func getUserLocation() {
     switch locationManager.authorizationStatus {
       /// впервые просим разрешение,  запускаем запрос на доступ

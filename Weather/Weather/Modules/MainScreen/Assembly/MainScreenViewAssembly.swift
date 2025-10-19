@@ -8,9 +8,9 @@
 import UIKit
 
 final class MainScreenViewAssembly {
-  func createModule() -> UIViewController & MainScreenViewPresenterInput {
+  func createModule(newService: WeatherDataServiceProtocol) -> UIViewController & MainScreenViewPresenterInput {
     let factory = MainScreenViewFactory()
-    let interactor = MainScreenViewInteractor()
+    let interactor = MainScreenViewInteractor(newService: newService)
     let view = MainScreenView()
     let presenter = MainScreenViewPresenter(moduleView: view, factory: factory, interactor: interactor)
     factory.output = presenter
