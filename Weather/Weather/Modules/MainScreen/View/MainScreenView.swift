@@ -20,26 +20,15 @@ final class MainScreenView: UIView {
   weak var output: MainScreenViewOutput?
   override init (frame: CGRect) {
     super.init(frame: frame)
-
     backgroundColor = .red
   }
-
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }
 
 extension MainScreenView: MainScreenViewInput {
-  func updateWeather(with weatherData: WeatherDataModels) {
-    print("Город: \(weatherData.city.name)")
-      // Проходим по часам прогноза и выводим температуру и описание
-      for hour in weatherData.list {
-        print(
-          "\(hour.dtTxt): Температура: \(hour.main.temp)°C, Описание: \(hour.weather.first?.description ?? "нет данных")"
-        )
-      }
-  }
-  
+  func updateWeather(with weatherData: WeatherDataModels) {}
   func didUpdateUserLocation(latitude: Double, longitude: Double) {
     print("Местоположение пользователя: \(latitude), \(longitude)")
   }

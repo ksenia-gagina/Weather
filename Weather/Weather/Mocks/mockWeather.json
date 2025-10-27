@@ -1,0 +1,157 @@
+{
+  "location": {
+    "city": "Москва",
+    "country": "Россия",
+    "latitude": 55.7558,
+    "longitude": 37.6173,
+    "timezone": "Europe/Moscow"
+  },
+  "currentWeather": {
+    "lastUpdated": "2025-10-26T14:30:00+03:00",
+    "temperature": 8,
+    "feelsLike": 5,
+    "description": "Облачно с прояснениями",
+    "icon": "partly-cloudy-day",
+    "humidity": 72,
+    "pressure": 1008,
+    "windSpeed": 18,
+    "windDirection": "СЗ",
+    "uvIndex": 2,
+    "visibility": 10,
+    "sunrise": "07:15",
+    "sunset": "17:30"
+  },
+  "hourlyForecast": [
+    {
+      "time": "15:00",
+      "isoTime": "2025-10-26T15:00:00+03:00",
+      "temperature": 8,
+      "icon": "partly-cloudy-day",
+      "pop": 10
+    },
+    {
+      "time": "16:00",
+      "isoTime": "2025-10-26T16:00:00+03:00",
+      "temperature": 7,
+      "icon": "cloudy",
+      "pop": 15
+    },
+    {
+      "time": "17:00",
+      "isoTime": "2025-10-26T17:00:00+03:00",
+      "temperature": 7,
+      "icon": "cloudy",
+      "pop": 20
+    },
+    {
+      "time": "18:00",
+      "isoTime": "2025-10-26T18:00:00+03:00",
+      "temperature": 6,
+      "icon": "partly-cloudy-night",
+      "pop": 15
+    },
+    {
+      "time": "19:00",
+      "isoTime": "2025-10-26T19:00:00+03:00",
+      "temperature": 5,
+      "icon": "partly-cloudy-night",
+      "pop": 10
+    },
+    {
+      "time": "20:00",
+      "isoTime": "2025-10-26T20:00:00+03:00",
+      "temperature": 5,
+      "icon": "clear-night",
+      "pop": 0
+    },
+    {
+      "time": "21:00",
+      "isoTime": "2025-10-26T21:00:00+03:00",
+      "temperature": 4,
+      "icon": "clear-night",
+      "pop": 0
+    },
+    {
+      "time": "22:00",
+      "isoTime": "2025-10-26T22:00:00+03:00",
+      "temperature": 4,
+      "icon": "clear-night",
+      "pop": 0
+    }
+  ],
+  "dailyForecast": [
+    {
+      "date": "2025-10-26",
+      "weekday": "Сегодня",
+      "tempHigh": 9,
+      "tempLow": 4,
+      "description": "Облачно, без осадков",
+      "icon": "partly-cloudy-day",
+      "pop": 20
+    },
+    {
+      "date": "2025-10-27",
+      "weekday": "Пн",
+      "tempHigh": 7,
+      "tempLow": 2,
+      "description": "Небольшой дождь",
+      "icon": "rain",
+      "pop": 75
+    },
+    {
+      "date": "2025-10-28",
+      "weekday": "Вт",
+      "tempHigh": 5,
+      "tempLow": 0,
+      "description": "Дождь со снегом",
+      "icon": "sleet",
+      "pop": 60
+    },
+    {
+      "date": "2025-10-29",
+      "weekday": "Ср",
+      "tempHigh": 6,
+      "tempLow": 1,
+      "description": "Переменная облачность",
+      "icon": "partly-cloudy-day",
+      "pop": 10
+    },
+    {
+      "date": "2025-10-30",
+      "weekday": "Чт",
+      "tempHigh": 8,
+      "tempLow": 3,
+      "description": "Солнечно",
+      "icon": "clear-day",
+      "pop": 0
+    },
+    {
+      "date": "2025-10-31",
+      "weekday": "Пт",
+      "tempHigh": 7,
+      "tempLow": 4,
+      "description": "Пасмурно",
+      "icon": "cloudy",
+      "pop": 30
+    },
+    {
+      "date": "2025-11-01",
+      "weekday": "Сб",
+      "tempHigh": 6,
+      "tempLow": 1,
+      "description": "Небольшой снег",
+      "icon": "snow",
+      "pop": 50
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALERT-WIND-001",
+      "title": "Желтый уровень: Сильный ветер",
+      "severity": "Warning",
+      "effective": "2025-10-26T18:00:00+03:00",
+      "expires": "2025-10-27T06:00:00+03:00",
+      "description": "Ожидаются порывы юго-западного ветра 15-20 м/с. Будьте осторожны, возможны падения деревьев и рекламных конструкций."
+    }
+  ]
+}

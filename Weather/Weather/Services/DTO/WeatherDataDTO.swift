@@ -8,74 +8,72 @@
 import UIKit
 
 struct WeatherDataDTO: Codable {
-  let list: [HourForecastDTO]
-  let city: CityDTO
+  let location: LocationDTO
+  let currentWeather: CurrentWeatherDTO
+  let hourlyForecast: [HourWeatherConditionsDTO]
+  let dailyForecast: [DayWeatherConditionsDTO]
+  let alerts: [AlertDTO]?
 }
 
-// Ключи кодирования WeatherDataDTO
-enum CodingKeysWeatherDataDTO: String, CodingKey {
-  case list
-  case city
+// MARK: - Локация
+
+struct LocationDTO: Codable {
+  let city: String
+  let country: String
+  let latitude: Double
+  let longitude: Double
+  let timezone: String
 }
 
-struct HourForecastDTO: Codable {
-  let dtTxt: String
-  let main: MainDTO
-  let weather: [WeatherDTO]
-  let wind: WindDTO
-  let pop: Double?
-}
+// MARK: - Текущая погода
 
-// Ключи кодирования HourForecastDTO
-enum CodingKeysHourForecastDTO: String, CodingKey {
-  case dtTxt = "dt_txt"
-  case main
-  case weather
-  case wind
-  case pop
-}
-
-struct MainDTO: Codable {
-  let temp: Double
-  let tempMin: Double
-  let tempMax: Double
+struct CurrentWeatherDTO: Codable {
+  let lastUpdated: String?
+  let temperature: Double
+  let feelsLike: Double
+  let description: String?
+  let icon: String?
   let humidity: Int
-}
-// Ключи кодирования MainDTO
-enum CodingKeysMainDTO: String, CodingKey {
-  case temp
-  case tempMin = "temp_min"
-  case tempMax = "temp_max"
-  case humidity
+  let pressure: Double
+  let windSpeed: Double
+  let windDirection: String?
+  let uvIndex: Int
+  let visibility: Double
+  let sunrise: String?
+  let sunset: String?
 }
 
-struct WeatherDTO: Codable {
+// MARK: - Почасовой прогноз
+
+struct HourWeatherConditionsDTO: Codable {
+  let time: String
+  let isoTime: String
+  let temperature: Double
+  let icon: String?
+  let pop: Int
+}
+
+// MARK: - Ежедневный прогноз
+
+struct DayWeatherConditionsDTO: Codable {
+  let date: String
+  let weekday: String
+  let tempHigh: Double
+  let tempLow: Double
+  let description: String?
+  let icon: String?
+  let pop: Int
+}
+
+// MARK: - Оповещения (Alerts)
+
+struct AlertDTO: Codable {
+  let id: String
+  let title: String
+  let severity: String
+  let effective: String
+  let expires: String
   let description: String
-  let icon: String
-}
-
-// Ключи кодирования WeatherDTO
-enum CodingKeysWeatherDTO: String, CodingKey {
-  case description
-  case icon
-}
-  
-struct WindDTO: Codable {
-  let speed: Double
-}
-
-// Ключи кодирования WeatherDTO
-enum CodingKeysWindDTO: String, CodingKey {
-  case speed
-}
-
-struct CityDTO: Codable {
-  let name: String
-}
-
-// Ключи кодирования WeatherDTO
-enum CodingKeysCityDTO: String, CodingKey {
-  case name
 }
 
 // MARK: - WeatherDataDTO
@@ -83,66 +81,91 @@ enum CodingKeysCityDTO: String, CodingKey {
 extension WeatherDataDTO {
   func mapTo() -> WeatherDataModels {
     WeatherDataModels(
-      list: list.map{ $0.mapTo() },
-      city: city.mapTo()
+      location: location.mapTo(),
+      current: currentWeather.mapTo(),
+      hourly: hourlyForecast.map { $0.mapTo() },
+      daily: dailyForecast.map { $0.mapTo() },
+      alerts: alerts?.map { $0.mapTo() }
+    )
+  }
+}
+// MARK: - LocationDTO
+
+extension LocationDTO {
+  func mapTo() -> LocationModels {
+    LocationModels(
+      city: city,
+      country: country,
+      latitude: latitude,
+      longitude: longitude,
+      timezone: timezone
     )
   }
 }
 
-// MARK: - HourForecastDTO
+// MARK: - CurrentWeatherDTO
 
-extension HourForecastDTO {
-  func mapTo() -> HourForecast {
-    HourForecast(
-      dtTxt: dtTxt,
-      main: main.mapTo(),
-      weather: weather.map { $0.mapTo() },
-      wind: wind.mapTo(),
+extension CurrentWeatherDTO {
+  func mapTo() -> CurrentModels {
+    CurrentModels(
+      lastUpdated: lastUpdated,
+      temperature: temperature,
+      feelsLike: feelsLike,
+      description: description,
+      icon: icon,
+      humidity: humidity,
+      pressure: pressure,
+      windSpeed: windSpeed,
+      windDirection: windDirection,
+      uvIndex: uvIndex,
+      visibility: visibility,
+      sunrise: sunrise,
+      sunset: sunset
+    )
+  }
+}
+
+// MARK: - HourWeatherConditionsDTO
+
+extension HourWeatherConditionsDTO {
+  func mapTo() -> HourForecastModels {
+    HourForecastModels(
+      time: time,
+      isoTime: isoTime,
+      temperature: temperature,
+      icon: icon,
       pop: pop
     )
   }
 }
 
-// MARK: - MainDTO
+// MARK: - DayWeatherConditionsDTO
 
-extension MainDTO {
-  func mapTo() -> Main {
-    Main(
-      temp: temp,
-      tempMin: tempMin,
-      tempMax: tempMax,
-      humidity: humidity
-    )
-  }
-}
-
-// MARK: - WeatherDTO
-
-extension WeatherDTO {
-  func mapTo() -> Weather {
-    Weather(
+extension DayWeatherConditionsDTO {
+  func mapTo() -> DailyForecastModels {
+    DailyForecastModels(
+      date: date,
+      weekday: weekday,
+      tempHigh: tempHigh,
+      tempLow: tempLow,
       description: description,
-      icon: icon
+      icon: icon,
+      pop: pop
     )
   }
 }
 
-// MARK: - WindDTO
+// MARK: - AlertDTO
 
-extension WindDTO {
-  func mapTo() -> Wind {
-    Wind(
-      speed: speed
-    )
-  }
-}
-
-// MARK: - CityDTO
-
-extension CityDTO {
-  func mapTo() -> City {
-    City(
-      name: name
+extension AlertDTO {
+  func mapTo() -> AlertModels {
+    AlertModels(
+      id: id,
+      title: title,
+      severity: severity,
+      effective: effective,
+      expires: expires,
+      description: description
     )
   }
 }

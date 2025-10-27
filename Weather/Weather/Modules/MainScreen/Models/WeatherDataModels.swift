@@ -8,34 +8,60 @@
 import UIKit
 
 struct WeatherDataModels {
-  let list: [HourForecast]
-  let city: City
+    let location: LocationModels
+    let current: CurrentModels
+    let hourly: [HourForecastModels]
+    let daily: [DailyForecastModels]
+    let alerts: [AlertModels]?
 }
-/// Прогноз на 1 час
-struct HourForecast {
-  let dtTxt: String
-  let main: Main
-  let weather: [Weather]
-  let wind: Wind
-  let pop: Double?
+
+struct LocationModels {
+    let city: String
+    let country: String
+    let latitude: Double
+    let longitude: Double
+    let timezone: String
 }
-/// Основные показатели погоды (температура, давление и т.п.)
-struct Main: Codable {
-  let temp: Double
-  let tempMin: Double
-  let tempMax: Double
-  let humidity: Int
+
+struct CurrentModels {
+    let lastUpdated: String?
+    let temperature: Double
+    let feelsLike: Double
+    let description: String?
+    let icon: String?
+    let humidity: Int
+    let pressure: Double
+    let windSpeed: Double
+    let windDirection: String?
+    let uvIndex: Int
+    let visibility: Double
+    let sunrise: String?
+    let sunset: String?
 }
-/// Погодные условия
-struct Weather: Codable {
-  let description: String
-  let icon: String
+
+struct HourForecastModels {
+    let time: String
+    let isoTime: String
+    let temperature: Double
+    let icon: String?
+    let pop: Int
 }
-/// Информация о ветре
-struct Wind: Codable {
-  let speed: Double
+
+struct DailyForecastModels {
+    let date: String
+    let weekday: String
+    let tempHigh: Double
+    let tempLow: Double
+    let description: String?
+    let icon: String?
+    let pop: Int
 }
-/// Данные о местоположении
-struct City: Codable {
-  let name: String
+
+struct AlertModels {
+    let id: String
+    let title: String
+    let severity: String
+    let effective: String
+    let expires: String
+    let description: String
 }
