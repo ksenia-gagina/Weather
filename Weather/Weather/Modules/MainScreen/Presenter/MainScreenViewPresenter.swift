@@ -50,6 +50,10 @@ extension MainScreenViewPresenter: MainScreenViewPresenterInput {
 // MARK: - MainScreenViewFactoryOutput
 
 extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
+  func didcreateContent(models: [Any]) {
+    factory.createContent()
+  }
+  
 }
 
 // MARK: - MainScreenViewInteractorOutput
