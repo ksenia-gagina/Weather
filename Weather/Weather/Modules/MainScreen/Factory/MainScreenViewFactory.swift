@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainScreenViewFactoryInput {
-  func createContent()
+  func createContent(from weatherData: WeatherDataModels)
 }
 protocol MainScreenViewFactoryOutput: AnyObject {
   func didcreateContent(models: [Any])
@@ -18,18 +18,15 @@ final class MainScreenViewFactory {
   weak var output: MainScreenViewFactoryOutput?
 }
 extension MainScreenViewFactory: MainScreenViewFactoryInput {
-  
-  func createContent() {
+  func createContent(from weatherData: WeatherDataModels) {
     var models: [Any] = []
-    
     models.append(
       WeatherHeaderCellModel(
-        icon: ._02D,
-        temperature: "8°",
-        description: "Облачно с прояснениями"
+        icon: UIImage(resource: ._02D),
+        temperature: "\(Int(weatherData.current.temperature))°",
+        description: weatherData.current.description ?? ""
       )
     )
     output?.didcreateContent(models: models)
-    
   }
 }

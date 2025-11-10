@@ -51,9 +51,8 @@ extension MainScreenViewPresenter: MainScreenViewPresenterInput {
 
 extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
   func didcreateContent(models: [Any]) {
-    factory.createContent()
+    moduleView.configure(models: models)
   }
-  
 }
 
 // MARK: - MainScreenViewInteractorOutput
@@ -61,7 +60,7 @@ extension MainScreenViewPresenter: MainScreenViewFactoryOutput {
 // Получает данные о местоположении и передает их во View для отображения пользователю или выводит сообщение об ошибке.
 extension MainScreenViewPresenter: MainScreenViewInteractorOutput {
   func didUpdateWeather(_ weatherData: WeatherDataModels) {
-    moduleView.updateWeather(with: weatherData)
+    factory.createContent(from: weatherData)
   }
 
   func didUpdateUserLocation(_ location: CLLocation) {
@@ -73,6 +72,7 @@ extension MainScreenViewPresenter: MainScreenViewInteractorOutput {
   func didFailWithError(with error: Error) {
     moduleView.showError(error.localizedDescription)
   }
+
 }
 
 // MARK: - MainScreenViewOutput

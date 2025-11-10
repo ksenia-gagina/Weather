@@ -8,27 +8,20 @@
 import UIKit
 
 public final class WeatherImageViews: UIView {
-  
   private let imageView = UIImageView()
-  
   public func setImage(image: UIImage?, style: WeatherImageViews.Style) {
     imageView.image = image
-    
     setLayout(style: style)
   }
 }
 
 private extension WeatherImageViews {
   func setLayout(style: WeatherImageViews.Style) {
-    [imageView].forEach{
+    [imageView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
-    
     NSLayoutConstraint.activate([
-      imageView.heightAnchor.constraint(equalToConstant: style.size),
-      imageView.widthAnchor.constraint(equalToConstant: style.size),
-      
       imageView.topAnchor.constraint(equalTo: topAnchor),
       imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
       imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -42,7 +35,6 @@ public extension WeatherImageViews {
     case small
     case middle
     case large
-    
     public var size: CGFloat {
       switch self {
       case .small:
@@ -50,9 +42,8 @@ public extension WeatherImageViews {
       case .middle:
         return 50
       case .large:
-        return 280
+        return 250
       }
     }
   }
 }
-
